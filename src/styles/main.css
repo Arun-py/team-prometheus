@@ -127,13 +127,13 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: titleGlow 3s ease-in-out infinite;
+  animation: titleGlow 4s ease-in-out infinite;
 }
 
 .section-icon {
   font-size: 2.5rem;
   color: var(--primary-color);
-  animation: iconFloat 3s ease-in-out infinite;
+  animation: iconFloat 4s ease-in-out infinite;
 }
 
 .title-underline {
@@ -1751,7 +1751,7 @@ body {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
@@ -1761,7 +1761,7 @@ body {
     box-shadow: 0 0 50px rgba(255, 107, 0, 0.5);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 0 80px rgba(255, 107, 0, 0.8);
   }
 }
@@ -1901,6 +1901,23 @@ body {
     padding: 0 20px;
   }
 
+  /* Hero adjustments */
+  .hero {
+    min-height: 100vh;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  /* Slow down animations on mobile */
+  .section-title {
+    animation: titleGlow 5s ease-in-out infinite;
+  }
+
+  .section-icon {
+    animation: iconFloat 5s ease-in-out infinite;
+  }
+
   .section-title {
     font-size: 2rem;
   }
@@ -1927,8 +1944,50 @@ body {
     justify-content: center;
   }
 
+  /* Team cards - better mobile sizing */
   .team-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .team-card {
+    height: 420px;
+    max-width: 100%;
+  }
+
+  .card-front,
+  .card-back {
+    padding: 25px;
+  }
+
+  .member-image,
+  .member-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .member-avatar {
+    font-size: 2.5rem;
+  }
+
+  .member-name {
+    font-size: 1.3rem;
+  }
+
+  .member-role {
+    font-size: 0.9rem;
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .contact-link {
+    padding: 10px 12px;
+    font-size: 0.85rem;
   }
 
   .innovation-grid {
@@ -1949,6 +2008,15 @@ body {
 }
 
 @media (max-width: 480px) {
+  /* Further slow down animations */
+  .section-title {
+    animation: titleGlow 6s ease-in-out infinite;
+  }
+
+  .section-icon {
+    animation: iconFloat 6s ease-in-out infinite;
+  }
+
   .title-line-1 {
     font-size: 2rem;
   }
@@ -1956,6 +2024,7 @@ body {
   .section-title {
     font-size: 1.8rem;
     flex-direction: column;
+    gap: 10px;
   }
 
   .project-title {
@@ -1982,10 +2051,35 @@ body {
     font-size: 1rem;
   }
 
-  /* Card spacing */
+  /* Team cards - optimized for small screens */
   .team-card {
-    margin: 0 auto 30px;
+    margin: 0 auto 25px;
     max-width: 100%;
+    height: 400px;
+  }
+
+  .member-image,
+  .member-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+
+  .member-avatar {
+    font-size: 2rem;
+  }
+
+  .member-name {
+    font-size: 1.2rem;
+  }
+
+  .member-role {
+    font-size: 0.85rem;
+  }
+
+  .contact-link {
+    padding: 8px 10px;
+    font-size: 0.8rem;
   }
 
   .innovation-card {
@@ -1993,16 +2087,6 @@ body {
   }
 
   /* Contact info */
-  .contact-info {
-    gap: 15px;
-  }
-
-  .contact-link {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-
-  /* Social icons */
   .social-icon {
     width: 45px;
     height: 45px;
@@ -2011,7 +2095,7 @@ body {
 
   /* Hero section */
   .hero {
-    min-height: 80vh;
+    min-height: 100vh;
     padding-top: 100px;
   }
 
@@ -2046,13 +2130,14 @@ body {
     height: 250px;
   }
 
-  /* Reduce animations on mobile for better performance */
-  .fire-cursor {
-    display: none;
+  /* Reduce overall animation intensity */
+  * {
+    animation-duration: 0.5s !important;
   }
 
-  * {
-    animation-duration: 0.3s !important;
+  .section-title,
+  .section-icon {
+    animation-duration: 6s !important;
   }
 }
 

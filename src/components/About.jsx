@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaEnvelope, FaUsers, FaLightbulb, FaGithub, FaTwitter } from 'react-icons/fa';
 import arunProfile from '../../images/arun_profile.jpg';
 
 const About = () => {
+  const [flippedCards, setFlippedCards] = useState({});
+
+  const handleCardClick = (index) => {
+    setFlippedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   const teamMembers = [
     {
       name: 'Arun T',
@@ -113,7 +122,8 @@ const About = () => {
               key={index}
               data-aos="zoom-in"
               data-aos-delay={index * 100}
-              className="team-card"
+              className={`team-card ${flippedCards[index] ? 'flipped' : ''}`}
+              onClick={() => handleCardClick(index)}
             >
               <div className="card-inner">
                 <div className="card-front">

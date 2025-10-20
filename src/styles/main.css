@@ -1970,4 +1970,165 @@ body {
   .logo-text {
     font-size: 1.2rem;
   }
+
+  /* Better touch targets */
+  .nav-link {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+
+  /* Card spacing */
+  .team-card {
+    margin: 0 auto 30px;
+    max-width: 100%;
+  }
+
+  .innovation-card {
+    padding: 25px;
+  }
+
+  /* Contact info */
+  .contact-info {
+    gap: 15px;
+  }
+
+  .contact-link {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Social icons */
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  /* Hero section */
+  .hero {
+    min-height: 80vh;
+    padding-top: 100px;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* Footer */
+  .footer-logo {
+    font-size: 1.5rem;
+    gap: 10px;
+  }
+
+  .footer-logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .footer-text,
+  .footer-institution {
+    font-size: 0.95rem;
+  }
+
+  /* Map container */
+  .map-container iframe {
+    height: 250px;
+  }
+
+  /* Project images */
+  .project-image {
+    height: 250px;
+  }
+
+  /* Reduce animations on mobile for better performance */
+  .fire-cursor {
+    display: none;
+  }
+
+  * {
+    animation-duration: 0.3s !important;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .title-line-1 {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 80px;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .team-card,
+  .innovation-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Better touch interactions */
+  .btn,
+  .nav-link,
+  .social-icon,
+  .contact-link {
+    -webkit-tap-highlight-color: rgba(255, 107, 0, 0.2);
+  }
+
+  /* Remove hover effects on touch devices */
+  .team-card:hover {
+    transform: none;
+  }
+
+  /* Cards flip on tap instead of hover */
+  .team-card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Disable fire cursor on touch devices */
+  .fire-cursor {
+    display: none;
+  }
+
+  body {
+    cursor: default;
+  }
 }

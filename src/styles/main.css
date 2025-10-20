@@ -546,6 +546,7 @@ body {
 .team-card {
   perspective: 1000px;
   height: 400px;
+  cursor: pointer;
 }
 
 .card-inner {
@@ -556,7 +557,8 @@ body {
   transform-style: preserve-3d;
 }
 
-.team-card:hover .card-inner {
+.team-card:hover .card-inner,
+.team-card.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
@@ -2198,14 +2200,13 @@ body {
     -webkit-tap-highlight-color: rgba(255, 107, 0, 0.2);
   }
 
-  /* Remove hover effects on touch devices */
-  .team-card:hover {
+  /* Disable hover on touch devices, use flipped class instead */
+  .team-card:hover .card-inner {
     transform: none;
   }
 
-  /* Cards flip on tap instead of hover */
   .team-card.flipped .card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) !important;
   }
 
   /* Disable fire cursor on touch devices */

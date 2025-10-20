@@ -20,9 +20,9 @@ const About = () => {
       department: 'B.E. EEE',
       year: 'III Year',
       email: '727723euee010@skcet.ac.in',
-      linkedin: 'https://linkedin.com/in/arun-thanigaimani-128156365',
-      github: 'https://github.com',
-      twitter: 'https://twitter.com',
+      linkedin: 'https://www.linkedin.com/in/arun-thanigaimani-128156365',
+      github: 'https://github.com/Arun-py',
+      twitter: 'https://x.com/arun_t_2005',
       image: arunProfile,
     },
     {
